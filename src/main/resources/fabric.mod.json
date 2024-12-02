@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "nikita-guy",
+	"version": "${version}",
+	"name": "Nikita guy",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/nikita-guy/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.nikita.guy.NikitaGuy",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.nikita.guy.NikitaGuyClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"nikita-guy.mixins.json",
+		{
+			"config": "nikita-guy.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
